@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: check style
-        run: npm run eslint
+        run: npm run lint
       - name: Module testing
         run: cross-env NODE_ENV=test jest --verbose --detectOpenHandles --runInBand
       - name: E2E testing
