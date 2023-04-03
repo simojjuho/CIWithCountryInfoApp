@@ -1,6 +1,6 @@
-import React from "react";
-import TableRow from "@mui/material/TableRow";
-import TableCell from "@mui/material/TableCell";
+import React from 'react'
+import TableRow from '@mui/material/TableRow'
+import TableCell from '@mui/material/TableCell'
 
 const TableHeadings = () => {
   return (
@@ -12,7 +12,7 @@ const TableHeadings = () => {
       <TableCell>Languages</TableCell>
       <TableCell></TableCell>
     </TableRow>
-  );
-};
+  )
+}
 
-export default TableHeadings;
+export default TableHeadings

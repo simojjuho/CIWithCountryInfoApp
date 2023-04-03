@@ -1,26 +1,26 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes, useLocation } from "react-router-dom";
-import CountryList from "./Components/CoyntryList";
-import { getCountries } from "./reducers/countryReducer";
-import Container from "@mui/material/Container";
-import CountryView from "./Components/CountryView";
-import SearchAppBar from "./Components/AppBar";
-import Info from "./Components/Info";
+import React from 'react'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import CountryList from './Components/CoyntryList'
+import { getCountries } from './reducers/countryReducer'
+import Container from '@mui/material/Container'
+import CountryView from './Components/CountryView'
+import SearchAppBar from './Components/AppBar'
+import Info from './Components/Info'
 
 const App = () => {
-  const [searchField, setSearchField] = useState("");
-  const dispatch = useDispatch();
-  const countries = useSelector((state) => state.countries);
-  const location = useLocation();
+  const [searchField, setSearchField] = useState('')
+  const dispatch = useDispatch()
+  const countries = useSelector((state) => state.countries)
+  const location = useLocation()
 
   const currentView =
-    location.pathname === "/" ? "allCountries" : "singleCountry";
+    location.pathname === '/' ? 'allCountries' : 'singleCountry'
 
   useEffect(() => {
-    dispatch(getCountries());
-  }, []);
+    dispatch(getCountries())
+  }, [])
 
   return (
     <Container maxWidth="lg">
@@ -38,7 +38,7 @@ const App = () => {
         <Route path="/info" element={<Info />} />
       </Routes>
     </Container>
-  );
-};
+  )
+}
 
-export default App;
+export default App

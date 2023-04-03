@@ -1,5 +1,4 @@
-import Input from "@mui/material/Input";
-import React from "react";
+import React from 'react'
 
 const CountryFilter = ({
   filterField,
@@ -8,16 +7,16 @@ const CountryFilter = ({
   setPage,
 }) => {
   const handleStateChange = (event) => {
-    setFilterField(event.target.value);
-    setItemOffset(0);
-    setPage(1);
-  };
+    setFilterField(event.target.value)
+    setItemOffset(0)
+    setPage(1)
+  }
 
   return (
     <>
       <input type="text" value={filterField} onChange={handleStateChange} />
     </>
-  );
-};
+  )
+}
 
-export default CountryFilter;
+export default CountryFilter

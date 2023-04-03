@@ -1,29 +1,29 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { getAll } from "../countryService";
+import { createSlice } from '@reduxjs/toolkit'
+import { getAll } from '../countryService'
 
 const countrySlice = createSlice({
-  name: "countries",
+  name: 'countries',
   initialState: [],
   reducers: {
     setAll(state, action) {
       const result = [
         ...action.payload.sort((a, b) => {
-          if (b.name.common > a.name.common) return -1;
-          else if (b.name.common < a.name.common) return 1;
-          else return 0;
+          if (b.name.common > a.name.common) return -1
+          else if (b.name.common < a.name.common) return 1
+          else return 0
         }),
-      ];
-      return result;
+      ]
+      return result
     },
   },
-});
+})
 
 export const getCountries = () => {
   return async (dispatch) => {
-    const result = await getAll();
-    dispatch(setAll(result));
-  };
-};
+    const result = await getAll()
+    dispatch(setAll(result))
+  }
+}
 
-export const { setAll } = countrySlice.actions;
-export default countrySlice.reducer;
+export const { setAll } = countrySlice.actions
+export default countrySlice.reducer

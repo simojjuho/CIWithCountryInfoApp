@@ -1,26 +1,24 @@
-import Link from "@mui/material/Link";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
-import React from "react";
+import { useNavigate } from 'react-router-dom'
+import React from 'react'
 import {
   TableContainer,
   Table,
   TableBody,
-  TableRow,
-  Paper,
-} from "@mui/material";
-import CountryFlag from "./CountryTable/CountryFlag";
-import CountryPopulation from "./CountryTable/CountryPopulation";
-import CountryLanguages from "./CountryTable/CountryLanguages";
-import CountryRegion from "./CountryTable/CountryRegion";
-import CountryName from "./CountryTable/CountryName";
-import TableHeadings from "./CountryTable/TableHeading";
-import ArrowCell from "./CountryTable/ArrowCell";
+  TableRow
+} from '@mui/material'
+import CountryFlag from './CountryTable/CountryFlag'
+import CountryPopulation from './CountryTable/CountryPopulation'
+import CountryLanguages from './CountryTable/CountryLanguages'
+import CountryRegion from './CountryTable/CountryRegion'
+import CountryName from './CountryTable/CountryName'
+import TableHeadings from './CountryTable/TableHeading'
+import ArrowCell from './CountryTable/ArrowCell'
 
 const CurrentCountries = ({ currentCountries }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const handleRowClick = (cca2) => {
-    navigate(`/countries/${cca2}`);
-  };
+    navigate(`/countries/${cca2}`)
+  }
 
   return (
     <TableContainer>
@@ -42,12 +40,12 @@ const CurrentCountries = ({ currentCountries }) => {
                 <CountryLanguages languages={country.languages} />
                 <ArrowCell />
               </TableRow>
-            );
+            )
           })}
         </TableBody>
       </Table>
     </TableContainer>
-  );
-};
+  )
+}
 
-export default CurrentCountries;
+export default CurrentCountries

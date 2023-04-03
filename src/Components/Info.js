@@ -1,11 +1,11 @@
-import { ArrowBack } from "@mui/icons-material";
-import { Container } from "@mui/material";
-import { Box } from "@mui/system";
-import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { ArrowBack } from '@mui/icons-material'
+import { Container } from '@mui/material'
+import { Box } from '@mui/system'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Info = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
     <Container>
       <Box component="p">
@@ -13,7 +13,7 @@ const Info = () => {
         <br />
         <br />
         It functions as a portfolio site and as a project for personal growth as
-        a web developer. It's not perfect in any way. The margins and paddings
+        a web developer. It&apos;s not perfect in any way. The margins and paddings
         could be nicer but when you only have so little time and so much to do,
         you¨ve got to leave it somewhere.
         <br />
@@ -21,10 +21,10 @@ const Info = () => {
         Thanks for visiting!
       </Box>
       <Box>
-        <ArrowBack onClick={() => navigate("/")} />
+        <ArrowBack onClick={() => navigate('/')} />
       </Box>
     </Container>
-  );
-};
+  )
+}
 
-export default Info;
+export default Info
