@@ -1,8 +1,8 @@
-import React from "react";
-import TableCell from "@mui/material/TableCell";
+import React from 'react'
+import TableCell from '@mui/material/TableCell'
 
 const CountryPopulation = ({ population }) => {
-  return <TableCell>{population}</TableCell>;
-};
+  return <TableCell>{population}</TableCell>
+}
 
-export default CountryPopulation;
+export default CountryPopulation

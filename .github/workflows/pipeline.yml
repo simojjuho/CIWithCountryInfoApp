@@ -1,0 +1,31 @@
+name: Deployment_pipeline
+
+on:
+  push:
+    branches:
+      - main
+    pull_request:
+      branches: [master]
+      types: [opened, synchronize]
+
+jobs:
+  deployment_pipeline:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
+      - name: check style
+        run: npm run eslint
+      - name: Module testing
+        run: cross-env NODE_ENV=test jest --verbose --detectOpenHandles --runInBand
+      - name: E2E testing
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run cypress:run
+          start: npm run start-prod
+          wait-on: http://localhost:3001
