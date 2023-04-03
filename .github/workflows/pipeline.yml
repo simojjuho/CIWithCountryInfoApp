@@ -22,7 +22,7 @@ jobs:
       - name: check style
         run: npm run lint
       - name: Module testing
-        run: cross-env NODE_ENV=test jest --verbose --detectOpenHandles --runInBand
+        run: NODE_ENV=test jest --verbose --detectOpenHandles --runInBand
       - name: E2E testing
         uses: cypress-io/github-action@v5
         with:
