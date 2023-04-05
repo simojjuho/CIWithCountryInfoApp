@@ -5,9 +5,9 @@
   "scripts": {
     "build": "webpack --mode=production",
     "start": "webpack serve --mode=development",
-    "test": "cross-env NODE_ENV=test jest --verbose --detectOpenHandles --runInBand",
-    "dev": "cross-env NODE_ENV=development nodemon index.js",
-    "start-prod": "cross-env NODE_ENV=production node index.js",
+    "test": "jest --verbose --detectOpenHandles --runInBand",
+    "dev": "nodemon index.js",
+    "start-prod": "node index.js",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "lint": "eslint './**/*.{js,jsx}'",
