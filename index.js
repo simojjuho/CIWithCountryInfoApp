@@ -1,19 +1,12 @@
-const express = require('express')
-const app = express()
+const http = require('http')
+const app = require('./app')
 
-app.use(express.static('build'))
 const PORT = 3001
+const server = http.createServer(app)
 
-app.get('/ping', (req, res) => {
-  res.json({ message: 'pong!' })
+
+
+server.listen(PORT, () => {
+  // eslint-disable-next-line no-console
+  console.log(`Listening to port ${PORT}`)
 })
-
-
-if(process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') {
-  app.listen(PORT, () => {
-    // eslint-disable-next-line no-console
-    console.log(`Listening to port ${PORT}`)
-  })
-}
-
-module.exports = app
